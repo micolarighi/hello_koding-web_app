@@ -6,6 +6,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "flowbite": "^1.6.3",
+    "flowbite-react": "^0.3.8",
     "graphql": "^16.6.0",
     "graphql-request": "^5.1.0",
     "html-react-parser": "^3.0.9",
