@@ -4,7 +4,7 @@ import { getPosts } from '../services';
 
 export default function Home({ posts }) {
   return (
-    <div className="con tainer mx-auto lg:px-10 px-3 mb-8">
+    <div className="container mx-auto lg:px-10 px-3 mb-8">
       <HeroSection/>
       <Categories/>
       <div className="grid lg:grid-cols-12 gap-12 mb-10">
