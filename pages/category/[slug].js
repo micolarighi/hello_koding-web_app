@@ -6,19 +6,14 @@ import { PostCard, Categories, Loader } from '../../components';
 
 const CategoryPost = ({ posts }) => {
   const router = useRouter();
-
   if (router.isFallback) {
     return <Loader />;
   }
-
   return (
     <div className="container mx-auto px-10 mb-8">
-      <div className="relative lg:sticky top-8 mt-5 z-10 bg-gray-100 shadow-md rounded">
-        <Categories />
-      </div>
       <div className="grid grid-cols-12">
-        <div className="col-span-1 lg:col-span-12">
-          <div className='grid grid-cols-12'>
+        <div className="col-span-2 lg:col-span-12">
+          <div className='grid lg:grid-cols-12'>
             {posts.map((post, index) => (
               <PostCard key={index} post={post.node} />
               ))}
@@ -27,6 +22,7 @@ const CategoryPost = ({ posts }) => {
       </div>
     </div>
   );
+
 };
 export default CategoryPost;
 

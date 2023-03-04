@@ -26,7 +26,7 @@ const PostWidget = ({ categories, slug }) => {
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">{slug ? 'Belajar Juga' : 'Disarankan'}</h3>
       {relatedPosts.map((post, index) => (
         <div key={index} className="flex items-center w-full mb-4">
-          <div className="w-16 flex-none">
+          <div className="lg:w-16 w-20 flex-none">
             <Image
               loader={grpahCMSImageLoader}
               alt={post.title}
@@ -37,7 +37,7 @@ const PostWidget = ({ categories, slug }) => {
               src={post.featuredImage.url}
             />
           </div>
-          <div className="flex-grow ml-4">
+          <div className="ml-4">
             <p className="text-gray-500 font-xs">{moment(post.createdAt).format('MMM DD, YYYY')}</p>
             <Link href={`/post/${post.slug}`} className="text-md" key={index}>{post.title}</Link>
           </div>

@@ -8,8 +8,8 @@ export default function Home({ posts }) {
       <HeroSection/>
       <Categories/>
       <div className="grid lg:grid-cols-12 gap-12 mb-10">
-        <div className="lg:col-span-8 col-span-12">
-          <div className='grid grid-cols-12'>
+        <div className="lg:col-span-8 col-span-1">
+          <div className='grid lg:grid-cols-3'>
               {posts.map((post, index) => (
                 index < 6 &&
                 <PostCard key={index} post={post.node} />

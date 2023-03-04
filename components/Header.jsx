@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Link from 'next/link';
 import { getCategories } from '../services';
+import Image from 'next/image'
 
 
 const Header = () => {
@@ -15,10 +16,11 @@ const Header = () => {
 
   return (
     <div className="container mx-auto px-10 mb-8">
-      <div className="border-b w-full inline-block border-blue-400 py-8">
-        <div className="md:float-left block">
+      <div className="border-b w-full inline-block py-3">
+        <div className="md:float-left block flex items-center">
+          <Image width={50} height={50}  src="/logo.png" alt="Hello Koding Logo" />
           <Link href="/">
-            <span className="cursor-pointer font-bold text-4xl">Hello Koding</span>
+            <span className="cursor-pointer ml-3 font-bold text-2xl">&lt;Hello Koding/&gt;</span>
           </Link>
         </div>
         <div className="hidden md:float-left md:contents">
