@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { getCategories } from '../services';
 import Image from 'next/image'
 
-
 const Header = () => {
   const [categories, setCategories] = useState([]);
 

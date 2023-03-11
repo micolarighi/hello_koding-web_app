@@ -6,7 +6,6 @@ export default function Home({ posts }) {
   return (
     <div className="container mx-auto lg:px-10 px-3 mb-8">
       <HeroSection/>
-      <Categories/>
       <div className="grid lg:grid-cols-12 gap-12 mb-10">
         <div className="lg:col-span-8 col-span-1">
           <div className='grid lg:grid-cols-3'>
@@ -22,7 +21,6 @@ export default function Home({ posts }) {
           </div>
         </div>
       </div>
-    <FeaturedPosts />
     </div>
   );
 }

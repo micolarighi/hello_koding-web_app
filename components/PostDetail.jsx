@@ -1,4 +1,5 @@
 import React from 'react';
+import Highlight from 'react-highlight'
 
 import moment from 'moment';
 
@@ -18,15 +19,27 @@ const PostDetail = ({ post }) => {
       if (obj.underline) {
         modifiedText = (<u key={index}>{text}</u>);
       }
+
+      if (obj.code) {
+        modifiedText = (<code className='bg-blue-100 rounded' key={index}>{text}</code>);
+      }
     }
 
     switch (type) {
+      case 'heading-two':
+        return <h2 key={index} className="text-2xl font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h2>;
       case 'heading-three':
         return <h3 key={index} className="text-xl font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
       case 'paragraph':
         return <p key={index} className="mb-8">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
       case 'heading-four':
         return <h4 key={index} className="text-md font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
+      // case 'code-block':
+      // return <code key={index} className="text-md bg-blue-200 mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</code>;
+      case 'code-block':
+        return <code key={index} className="text-md bg-blue-200 mb-4">{modifiedText.map((item, i) =>  <Highlight key={i} language="javascript">
+        {item}
+      </Highlight>)}</code>;
       case 'image':
         return (
           <img
@@ -46,7 +59,6 @@ const PostDetail = ({ post }) => {
     <>
       <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
         <div className="relative overflow-hidden shadow-md mb-6">
-          <img src={post.featuredImage.url} alt="" className="object-top h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg" />
         </div>
         <div className="px-4 lg:px-0">
           <div className="flex items-center mb-8 w-full">
